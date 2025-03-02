@@ -27,14 +27,14 @@ func main() {
 	}
 
 	fmt.Println("\nEnd of the program")
-  fmt.Println()
+	fmt.Println()
 
 	for _, value := range names {
 		fmt.Println("Value is: ", value)
-    value = "New Value" // This will not change the value in the array
+		value = "New Value" // This will not change the value in the array
 	}
 
-  fmt.Println()
-  fmt.Println(names) // The array is not changed
+	fmt.Println()
+	fmt.Println(names) // The array is not changed
 
 }
