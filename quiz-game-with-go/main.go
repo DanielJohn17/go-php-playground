@@ -16,8 +16,9 @@ func getInput() (string, error) {
 }
 
 func main() {
+	score := 0
 
-	fmt.Println("Welcome to my quiz game!")
+	fmt.Printf("Welcome to my quiz game! What is your name? ")
 	name, _ := getInput()
 
 	fmt.Printf("Hello, %v, welcome to the game!\n", name)
@@ -40,10 +41,28 @@ func main() {
 	fmt.Printf("What is better, the RTX 3080 or RTX 3090? ")
 	answer, _ := getInput()
 
-	if answer == "RTX 3090" {
+	if strings.ToUpper(answer) == "RTX 3090" {
 		fmt.Println("Correct!")
+		score += 1
 	} else {
 		fmt.Println("Wrong!")
 	}
 
+	fmt.Printf("How many cores does the Ryzen 9 3900x have? ")
+	cores_str, _ := getInput()
+	cors, error := strconv.ParseInt(cores_str, 10, 0)
+
+	if error != nil {
+		fmt.Println("Please enter a number")
+		return
+	}
+
+	if cors == 12 {
+		fmt.Println("Correct!")
+		score += 1
+	} else {
+		fmt.Println("Wrong!")
+	}
+
+	fmt.Printf("Your score is %v out of %v\n", score, 2)
 }
