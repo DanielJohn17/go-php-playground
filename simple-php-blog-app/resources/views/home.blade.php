@@ -25,6 +25,7 @@
             <button>Create Post</button>
         </form>
     </div>
+
     <div style="border: 3px solid black;">
         <h2>Your Posts</h2>
         @foreach ($posts as $post)
@@ -32,9 +33,15 @@
             <h3>{{ $post->title }}</h3>
             <p>{{ $post->body }}</p>
             <p><a href="/edit-post/{{$post->id}}">Edit</a></p>
+            <form action="/delete-post/{{$post->id}}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button>Delete</button>
+            </form>
         </div>
         @endforeach
     </div>
+
     @else
     <div style="border: 3px solid black;">
         <h2>Register</h2>
