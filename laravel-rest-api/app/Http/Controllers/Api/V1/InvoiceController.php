@@ -27,7 +27,8 @@ class InvoiceController extends Controller
 
             return new InvoiceCollection(Invoice::paginate());
         } else {
-            return new InvoiceCollection(Invoice::where($queryItems)->paginate());
+            $invoice = Invoice::where($queryItems)->paginate();
+            return new InvoiceCollection($invoice->appends($request->query()));
         }
     }
 
