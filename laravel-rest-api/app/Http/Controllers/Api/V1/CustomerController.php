@@ -11,14 +11,14 @@ use App\Models\Customer;
 use App\Http\Resources\V1\CustomerResource;
 use App\Http\Resources\V1\CustomerCollection;
 use App\Filters\V1\CustomersFilter;
-use Illuminate\Http\Request as HttpRequest;
+use Illuminate\Http\Request;
 
 class CustomerController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(HttpRequest $request)
+    public function index(Request $request)
     {
         $filter = new CustomersFilter();
         $queryItems = $filter->transform($request);
