@@ -38,12 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Student List</title>
-</head>
+<?php include './layout/head.html'; ?>
 
 <body class="w-screen h-screen bg-gray-100 flex flex-col">
     <?php include './layout/nav.html'; ?>
@@ -79,6 +74,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </body>
 
 </html>
-<!-- <?php
-        $conn->close();
-        ?> -->
