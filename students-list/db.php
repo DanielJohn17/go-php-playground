@@ -32,6 +32,11 @@ class DBConnection
     $this->conn = $this->connect();
   }
 
+  public function __destruct()
+  {
+    $this->close();
+  }
+
   public function connect()
   {
     try {
