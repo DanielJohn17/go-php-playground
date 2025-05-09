@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($name) || empty($age) || empty($email)) {
         echo "Please fill in all fields.";
     } else {
-        if ($conn->update_data($id, $name, $email, $age)) {
+        if ($conn->update_student($id, $name, $email, $age)) {
             header("Location: index.php");
             exit();
         } else {
